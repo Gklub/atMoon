@@ -1,0 +1,24 @@
+<!--created by harbon-->
+<!--<ion-modal-view >-->
+<div class = "modal slide-in-up" ng-controller = "modalCtrl">
+
+    <ion-header-bar>
+        <h1 class="title">Create My Room</h1>
+    </ion-header-bar>
+
+    <div class="list list-inset" style = "margin-top: 50px">
+        <h4 align = "center" ng-show = "createInfo">房间正在创建中。。。。</h4>
+        <label class = "item item-input item-floating-label">
+            <span class = "input-label">房间名</span>
+            <input type = "text" placeholder="房间名" ng-model = "roomName"/>
+        </label>
+        <label class = "item item-input item-floating-label">
+            <span class = "input-label">房间介绍</span>
+            <input type = "text" placeholder="房间介绍" ng-model = "roomDescription"/>
+        </label>
+        <button class = "button button-block button-positive" ng-click = "createRoom()">创建</button>
+    </div>
+
+
+</div>
+<!--</ion-modal-view>-->

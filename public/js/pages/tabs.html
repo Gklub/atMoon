@@ -1,0 +1,67 @@
+<!--created by harbon-->
+
+<ion-side-menus>
+    <ion-side-menu-content>
+
+        <ion-nav-bar class="bar-positive" animation="nav-title-slide-ios7" ng-controller = "navBarCtrl" delegate-handle = 'navBar'>
+            <button class="button-clear" ng-click="leaveRoom()" ng-show = "backShouldShow">
+                <i class="ion-arrow-left-c"></i>
+            </button>
+            <ion-nav-buttons side="left">
+                <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+
+
+
+        <ion-tabs class="tabs-icon-top tabs-positive" delegate-handle = "tabs" ng-controller = "tabsCtrl">
+
+            <ion-tab title="Rooms" icon-on="ion-ios7-home" icon-off="ion-ios7-home-outline" ng-click = "changeTab(0)">
+                <ion-nav-view name="tabs-rooms" animation="slide-left-right"></ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="MyRooms" icon-on="ion-ios7-paper" icon-off="ion-ios7-paper-outline" ng-click = "changeTab(1)">
+                <ion-nav-view name="tabs-myRoom" animation="slide-left-right"></ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="Messages" icon-on="ion-ios7-chatbubble" icon-off="ion-ios7-chatbubble-outline" ng-click = "changeTab(2)">
+                <ion-nav-view name="tabs-messages" animation="slide-left-right"></ion-nav-view>
+            </ion-tab>
+
+        </ion-tabs>
+
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+        <header class="bar bar-header bar-positive">
+            <h1 class="title">个人信息</h1>
+        </header>
+        <ion-content class="has-header" ng-controller = "leftMenuCtrl" align = "center" valign = "middle">
+            </br>  </br>  </br>  </br>  </br>  </br>
+            <img ng-src = "{{user.avatarUrl}}" />
+            </br>
+            <h3>{{name}}</h3>
+            <a ng-click = "logout()" class = "button button-assertive">注销</a>
+
+        </ion-content>
+    </ion-side-menu>
+    <ion-side-menu side="right">
+        <header class="bar bar-header bar-positive">
+            <h1 class="title">当前房间用户</h1>
+        </header>
+        <ion-content class="has-header" ng-controller = "rightMenuCtrl">
+
+                <ion-list class = "list list-inset">
+                    <ion-item class = "item item-avatar-left" ng-repeat = "user in users" ng-click = "sendMsgTo($index)">
+                        <img ng-src = "{{user.avatarUrl}}">
+                        <h2>{{user.name}}</h2>
+                    </ion-item>
+                </ion-list>
+
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
+

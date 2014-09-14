@@ -1,0 +1,38 @@
+<!--created by harbon-->
+<ion-view title = "与{{roomName}}的私聊" style = "height:90%;margin-top: 45px " >
+    <ion-pane>
+
+        <ion-list>
+
+            <div class = "item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="Your Message To Send" ng-model = "myMessage">
+                </label>
+                <button class="button button-small" ng-click = "sendMyMessage()">
+                    发送
+                </button>
+            </div>
+
+        </ion-list>
+
+    </ion-pane>
+
+    <ion-pane style = "margin-top: 55px">
+        <ion-content zooming = "true" class = "no-header" style = "margin-bottom: 50px" delegate-handle = 'scrollBottom'>
+            <ion-list>
+                <ion-item class = "item item-avatar-left my-item"
+                          collection-repeat = "message in messages"
+                          collection-item-width="'100%'"
+                          collection-item-height="75">
+                    <img ng-src="{{message.user.avatarUrl}}">
+                    <h2>{{message.user.name}}:</h2>
+                    <p>{{message.content}}</p>
+
+                </ion-item>
+            </ion-list>
+
+        </ion-content>
+    </ion-pane>
+</ion-view>
+
+</ion-view>

@@ -1,0 +1,16 @@
+<!--created by harbon-->
+    <ion-view title = "Messages" style = "height: 90%;margin-top: 45px">
+        <ion-content zooming = "true" class = "no-header">
+            <ion-list can-swipe = "true" class = "list list-inset">
+                <ion-item class = "item item-avatar-left" ng-repeat = "privateRoom in privateRooms" ng-click = "acceptPrivateTalk($index)">
+                    <img ng-src = "{{privateRoom.img_src}}"/>
+                    <h2>{{privateRoom.name}}</h2>
+                    <p>发来消息</p>
+                    <ion-option-button class = "button-positive"  ng-click = "acceptPrivateTalk($index)">接见</ion-option-button>
+                    <ion-option-button class = "button-assertive" ng-click = "messageDelete($index)">斩了</ion-option-button>
+                </ion-item>
+
+            </ion-list>
+        </ion-content>
+
+    </ion-view>

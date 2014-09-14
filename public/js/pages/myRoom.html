@@ -1,0 +1,15 @@
+<!--created by harbon-->
+<ion-view title = "MyRooms" style = "height: 90%;margin-top: 45px" ng-init = "init()">
+    <a class = "button button-icon icon ion-ios7-plus-outline" ng-click = "openModal()"></a>
+    <ion-content zooming = "true" class = "no-header" style="margin-top: 18px">
+        <ion-list  can-swipe="true" class = "list list-inset">
+            <ion-item class = "item item-thumbnail-left" ng-repeat = "myRoom in myRooms"  ng-click = "enterMyRoom($index)">
+                <img ng-src = "{{myRoom.img_src}}"/>
+                <h2>{{myRoom.name}}</h2>
+                <p><span><i class = "ion-person-stalker"></i></span>{{myRoom.count}}人</p>
+                <ion-option-button class = "button-positive"  ng-click = "roomUpdate($index)">修改</ion-option-button>
+                <ion-option-button class = "button-assertive" ng-click = "roomDelete($index)">删除</ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,19 @@
+<!--created by harbon12-->
+<ion-view title = "Rooms" style = "height: 90%;margin-top: 45px">
+
+    <ion-content zooming = "true" class = "no-header">
+
+        <ion-list class = "list list-inset">
+
+            <a class="item item-thumbnail-left" ng-click = "enterRoom($index)" ng-repeat = "room in rooms">
+                <img ng-src="{{room.img_src}}">
+                <h2>{{room.name}}</h2>
+                <p><span><i class = "ion-person-stalker"></i></span>{{room.count}}人</p>
+            </a>
+
+        </ion-list>
+
+    </ion-content>
+
+
+</ion-view>

@@ -1,0 +1,24 @@
+<!--created by harbon-->
+        <form>
+            <h4 ng-show = "infoShouldShow" align = "center">{{info}}</h4>
+<div class="list list-inset">
+    <label class="item item-input item-floating-label">
+        <span class="input-label">UserName:</span>
+        <input type="text" placeholder="UserName" ng-model = "userName">
+    </label>
+
+    <label class="item item-input item-floating-label">
+        <span class="input-label">Password:</span>
+        <input type="password" placeholder="Password" ng-model = "password">
+    </label>
+    <label class="item item-input item-floating-label">
+        <span class="input-label">RePassword:</span>
+        <input type="password" placeholder="RePassword" ng-blur = "showInfo()" ng-model = "rePassword">
+    </label>
+    <label class="item item-input item-floating-label">
+        <span class="input-label">Email:</span>
+        <input type="email" placeholder="Email" ng-model = "email" >
+    </label>
+    <button class = "button button-block button-positive" ng-click = "createAccount()">Create Account</button>
+</div>
+        </form>
