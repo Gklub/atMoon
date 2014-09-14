@@ -2,5 +2,6 @@ atMoon
 ======
 
 a web application about chatting online
-Nedd nodejs runTime,
-npm install first
+Need nodejs runTime,
+npm install first and run node app.js 
+the port is 3000
